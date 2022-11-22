@@ -1,0 +1,24 @@
+.form-control,
+.input-group-text {
+    border: 1px solid #ffffff;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: rgb(255, 255, 255);
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: rgb(255, 255, 255);
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: rgb(255, 255, 255);
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: rgb(255, 255, 255);
+}
