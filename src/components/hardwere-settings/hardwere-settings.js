@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { image1, imageLogo } from "../../image/img";
+
 import Header from "../header";
 
 export default class HardwereSettings extends Component {
@@ -12,7 +14,7 @@ export default class HardwereSettings extends Component {
               <img
                 className="col-10 col-md-5"
                 alt="GosuLogo"
-                src="../assets/logoBlue.png"
+                src={imageLogo}
               />
             </div>
             <div className="col my-2"></div>
@@ -38,7 +40,7 @@ export default class HardwereSettings extends Component {
           <div className="height container-fluid d-flex flex-column align-items-center justify-content-center mb-5 mb-md-0">
             <div className="col-11">
               <div className="btn bg-primary bg-opacity-50 col-9 col-md-3 py-3 py-md-4 px-md-3 mt-md-0 mt-5">
-                <img className="col-2 mb-3" src="..\assets\image1.png" alt="" />
+                <img className="col-2 mb-3" src={image1} alt="" />
                 <h4 className="text4">Настройка оборудования</h4>
                 <input type="text" className="d-none" />
               </div>
@@ -93,7 +95,7 @@ export default class HardwereSettings extends Component {
                   <button
                     className="btn btn-primary col-12 text-uppercase fs-6 fw-bolder py-2"
                     id="login"
-                  >Добавить</button>
+                  >Создать заявку</button>
                 </div>
               </form>
             </div>

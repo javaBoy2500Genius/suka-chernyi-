@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import "./home-page.css";
+
+import {ForHomePage} from "../if-not-user";
 import Header from "../header";
-// import HardwereSettings from "../hardwere-settings";
+
 
 export default class HomePage extends Component {
   render() {
@@ -19,61 +20,7 @@ export default class HomePage extends Component {
             <div>
               <h4 className="text4">Выберите интересующий вас раздел: </h4>
             </div>
-            <div>
-              <div className="col-lg-11 d-flex justify-content-evenly mt-5 pb-5">
-                <div className="btn bg-primary bg-opacity-50 col-5 col-md-4 col-lg-3 py-4 px-3">
-                  <a href="/settings">
-                    <img className="col-3 mb-3" alt="" />
-                    <h4 className="text4">Настройка оборудования</h4>
-                  </a>
-                </div>
-
-                <div className="btn bg-primary bg-opacity-50 col-5 col-md-4 col-lg-3 py-4 px-3">
-                  <a href="/question">
-                    <img className="col-3 mb-3" alt="" />
-                    <h4 className="text4">Вопрос по 1С</h4>
-                  </a>
-                </div>
-              </div>
-              <div className="col-lg-11 d-flex justify-content-evenly mb-5 pb-5">
-                <div className="btn bg-primary bg-opacity-50 col-5 col-md-4 col-lg-3 py-4 px-3">
-                  <a href="/other">
-                    <img
-                      className="col-3 mb-3"
-                      src="..\assets\image3.png"
-                      alt=""
-                    />
-                    <h4 className="text4">Другое</h4>
-                  </a>
-                </div>
-                <div className="btn bg-primary bg-opacity-50 col-5 col-md-4 col-lg-3 py-4 px-3">
-                  <a href="/table">
-                    <img className="col-3 mb-3" alt="" />
-                    <h4 className="text4">Все заявки</h4>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="d-flex justify-content-evenly mt-5 pb-md-5">
-                <div className="btn bg-primary bg-opacity-50 col-4 col-md-3 py-4 px-3">
-                  <img className="col-3 mb-3" alt="" />
-                  <h4 className="text4">Добавить сотрудника</h4>
-                </div>
-                <div className="btn bg-primary bg-opacity-50 col-4 col-md-3 py-4 px-3">
-                  <img
-                    className="col-3 mb-3"
-                    src="..\assets\image6.png"
-                    alt=""
-                  />
-                  <h4 className="text4">Пригласить клиента</h4>
-                </div>
-                <div className="btn bg-primary bg-opacity-50 col-4 col-md-3 py-4 px-3 d-none d-md-block">
-                  <img className="col-3 mb-3" alt="" />
-                  <h4 className="text4">Все заявки</h4>
-                </div>
-              </div>
-            </div>
+            <ForHomePage />
           </div>
         </div>
       </>

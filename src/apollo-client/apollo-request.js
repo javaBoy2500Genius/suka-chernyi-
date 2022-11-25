@@ -40,17 +40,94 @@ export const GET_ALLORGANISATIONS = gql`
   }
 `;
 export const GET_USERROLE = gql`
-  mutation Mutation($userRoleId: String) {
-    getUserRole(userRoleId: $userRoleId) {
+  query GetRole($token: String) {
+    getRole(token: $token) {
       _id
-      user_id
-      role_id
+      title
+      icon
+      description
+      permmission {
+        _id
+        title
+        description
+        implementer
+        state
+        priority
+        files
+        comments
+        admin
+      }
+    }
+  }
+`;
+
+export const GET_USER = gql`
+  query Query($userId: [String]) {
+    getUser(userId: $userId) {
+      _id
+      first_name
+      last_name
+      middle_name
+      full_name
+      post
+      depaptament
+      organisation_id
+      login
+      hashed_password
+      telegram_chat_id
+    }
+  }
+`;
+
+export const GET_ONE_TASK = gql`
+  query GetTask($taskId: String) {
+    getTask(taskId: $taskId) {
+      _id
+      task_type_id
+      title
+      description
+      create_date
+      acceptence_date
+      finished_date
+      author_id
+      implementer_id
+      state_id
+      priority
+      mata_tags
+      files {
+        _id
+        name
+        author_id
+        create_date
+        file_url
+      }
+    }
+  }
+`;
+
+export const GET_STATE_TO_TASK = gql`
+  query GetState($stateId: String) {
+    getState(stateId: $stateId) {
+      _id
+      title
+      sla
+    }
+  }
+`;
+
+export const GET_ALL_COMMENTS_TO_TASK = gql`
+  query Query($taskId: String) {
+    getAllComments(taskId: $taskId) {
+      _id
+      comments
+      task_id
+      author_id
     }
   }
 `;
 
 export const ADD_TASK = gql`
-  mutation Mutation($taskData: inputTask, $token: String) {
+  mutation addTask($taskData: inputTask, $token: String) {
     addTask(taskData: $taskData, token: $token) {
       _id
       task_type_id
@@ -80,6 +157,7 @@ export const ADD_TASK = gql`
 //     "title": null,
 //     "description": null,
 //     "create_date": null,
+//     " mata_tags": [String]
 //     "files": [
 //       {
 //         "name": null,
@@ -90,6 +168,17 @@ export const ADD_TASK = gql`
 //   },
 //   "token": null
 // }
+
+export const ADD_COMMENT_TO_TASK = gql`
+  mutation Mutation($commentsData: inputComments, $token: String) {
+    addCommentsToTask(commentsData: $commentsData, token: $token) {
+      _id
+      comments
+      task_id
+      author_id
+    }
+  }
+`;
 export const ADD_ORGANISATION = gql`
   mutation AddOrganisation($org: inputOrganisation) {
     addOrganisation(org: $org) {

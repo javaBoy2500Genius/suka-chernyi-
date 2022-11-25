@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { imageLogo } from "../../image/img";
+
 import PostLoginForm from "./post-login-form";
 
 export default class LoginForm extends Component {
@@ -17,22 +19,21 @@ export default class LoginForm extends Component {
     };
 
     const userToken = await PostLoginForm({
-      login: validateEmail(login.value),
+      login: validateEmail(login.value)[2],
       password: password.value,
     });
 
     localStorage.setItem("token", JSON.stringify(userToken))
-    
-    if (localStorage.getItem("token")) {
+    if (userToken.token) {
       // eslint-disable-next-line no-restricted-globals
-      location.reload()
+      document.location = "/homepage"
     } 
   }
   render() {
     return (
       <div className="height container-fluid d-flex flex-column align-items-center justify-content-center">
         <div className="home align-items-center">
-          <img className="col-2 col- col-xxl-2" alt="GosuLogo" />
+          <img className="col-2 col- col-xxl-2" src={imageLogo} alt="GosuLogo" />
         </div>
         <div className="card col-lg-4 col-xxl-3 bg-primary bg-opacity-50 mt-4 justify">
           <div className="card-header d-flex justify-content-evenly"></div>
